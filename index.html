@@ -246,11 +246,12 @@
           <form
             id="contact-form"
             class="cta-form"
-            action="https://formspree.io/f/maggiautomation"
+            action="https://formsubmit.co/ajax/mateo@maggiautomation.com"
             method="POST"
           >
             <input type="hidden" name="_subject" value="Nueva consulta desde Maggiautomation" />
-            <input type="hidden" name="_redirect" value="https://maggiautomation.com/gracias" />
+            <input type="hidden" name="_next" value="https://maggiautomation.com/gracias" />
+            <input type="hidden" name="_captcha" value="false" />
             <label>
               Nombre
               <input type="text" name="name" placeholder="Tu nombre" required />
@@ -322,7 +323,9 @@
               body: formData,
             });
 
-            if (!response.ok) {
+            const data = await response.json().catch(() => null);
+
+            if (!response.ok || (data && data.success === 'false')) {
               throw new Error('Error en la red');
             }
 
