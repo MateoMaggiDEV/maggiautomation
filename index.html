@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -296,30 +296,51 @@
       <div class="footer-bottom">© 2024 Maggiautomation. Todos los derechos reservados.</div>
     </footer>
     <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+
       const navToggle = document.querySelector('.nav-toggle');
       const navMenu = document.querySelector('.nav-menu');
 
       if (navToggle && navMenu) {
+        const navLinks = navMenu.querySelectorAll('a');
+        const closeMenu = () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('is-open');
+        };
+
         navToggle.addEventListener('click', () => {
           const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
           navToggle.setAttribute('aria-expanded', String(!isExpanded));
           navMenu.classList.toggle('is-open', !isExpanded);
         });
 
-        navMenu.querySelectorAll('a').forEach((link) => {
+        navLinks.forEach((link) => {
           link.addEventListener('click', () => {
-            navToggle.setAttribute('aria-expanded', 'false');
-            navMenu.classList.remove('is-open');
+            closeMenu();
           });
         });
 
         document.addEventListener('keydown', (event) => {
           if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
-            navToggle.setAttribute('aria-expanded', 'false');
-            navMenu.classList.remove('is-open');
+            closeMenu();
             navToggle.focus();
           }
         });
+
+        const desktopQuery = window.matchMedia('(min-width: 721px)');
+        const syncMenuForDesktop = (event) => {
+          if (event.matches) {
+            closeMenu();
+          }
+        };
+
+        syncMenuForDesktop(desktopQuery);
+        if (typeof desktopQuery.addEventListener === 'function') {
+          desktopQuery.addEventListener('change', syncMenuForDesktop);
+        } else if (typeof desktopQuery.addListener === 'function') {
+          desktopQuery.addListener(syncMenuForDesktop);
+        }
       }
     </script>
   </body>

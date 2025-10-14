@@ -624,11 +624,11 @@ textarea {
     gap: 16px;
   }
 
-  .nav-toggle {
+  .js .nav-toggle {
     display: inline-flex;
   }
 
-  .nav-menu {
+  .js .nav-menu {
     position: absolute;
     top: calc(100% + 12px);
     right: 0;
@@ -647,9 +647,23 @@ textarea {
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
-  .nav-menu.is-open {
+  .js .nav-menu.is-open {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .no-js .nav-menu,
+  .no-js .nav-menu.is-open {
+    position: static;
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
     pointer-events: auto;
     visibility: visible;
   }
