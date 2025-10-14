@@ -463,6 +463,34 @@ section:hover::before {
   gap: 16px;
 }
 
+.form-status {
+  display: none;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  background: rgba(15, 23, 42, 0.65);
+  color: var(--color-text);
+  transition: opacity 0.2s ease;
+}
+
+.form-status--visible {
+  display: block;
+}
+
+.form-status--success {
+  border-color: rgba(34, 211, 238, 0.6);
+  background: rgba(34, 211, 238, 0.18);
+  color: #0f172a;
+}
+
+.form-status--error {
+  border-color: rgba(244, 114, 182, 0.7);
+  background: rgba(244, 114, 182, 0.2);
+  color: #fee2f8;
+}
+
 .cta-form label {
   display: flex;
   flex-direction: column;
