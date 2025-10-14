@@ -13,12 +13,18 @@
     <header class="navbar">
       <div class="container nav-content">
         <div class="logo">Maggiautomation</div>
-        <nav class="nav-links">
-          <a href="#servicios">Servicios</a>
-          <a href="#casos">Casos de éxito</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#contacto" class="btn btn-secondary">Agenda una llamada</a>
-        </nav>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Abrir menú de navegación</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <div class="nav-panel" id="primary-navigation">
+          <nav class="nav-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#casos">Casos de éxito</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#contacto" class="btn btn-secondary">Agenda una llamada</a>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -295,6 +301,55 @@
       </div>
       <div class="footer-bottom">© 2024 Maggiautomation. Todos los derechos reservados.</div>
     </footer>
+    <script>
+      (function () {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navPanel = document.querySelector('#primary-navigation');
+
+        if (!navToggle || !navPanel) {
+          return;
+        }
+
+        const closeMenu = () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navPanel.classList.remove('is-open');
+        };
+
+        navToggle.addEventListener('click', () => {
+          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!expanded));
+          navPanel.classList.toggle('is-open', !expanded);
+        });
+
+        navPanel.addEventListener('click', (event) => {
+          const target = event.target;
+
+          if (!(target instanceof Element)) {
+            return;
+          }
+
+          const link = target.closest('a');
+
+          if (link) {
+            closeMenu();
+          }
+        });
+
+        const mediaQuery = window.matchMedia('(min-width: 721px)');
+
+        const handleMediaChange = (event) => {
+          if (event.matches) {
+            closeMenu();
+          }
+        };
+
+        if (typeof mediaQuery.addEventListener === 'function') {
+          mediaQuery.addEventListener('change', handleMediaChange);
+        } else if (typeof mediaQuery.addListener === 'function') {
+          mediaQuery.addListener(handleMediaChange);
+        }
+      })();
+    </script>
     <script>
       (function () {
         const form = document.getElementById('contact-form');
