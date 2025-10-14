@@ -13,12 +13,20 @@
     <header class="navbar">
       <div class="container nav-content">
         <div class="logo">Maggiautomation</div>
-        <nav class="nav-links">
-          <a href="#servicios">Servicios</a>
-          <a href="#casos">Casos de éxito</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#contacto" class="btn btn-secondary">Agenda una llamada</a>
-        </nav>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span class="sr-only">Abrir menú</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <div class="nav-menu" id="nav-menu">
+          <nav class="nav-links" aria-label="Navegación principal">
+            <a href="#servicios">Servicios</a>
+            <a href="#casos">Casos de éxito</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#contacto" class="btn btn-secondary">Agenda una llamada</a>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -287,5 +295,32 @@
       </div>
       <div class="footer-bottom">© 2024 Maggiautomation. Todos los derechos reservados.</div>
     </footer>
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!isExpanded));
+          navMenu.classList.toggle('is-open', !isExpanded);
+        });
+
+        navMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('is-open');
+          });
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('is-open');
+            navToggle.focus();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
