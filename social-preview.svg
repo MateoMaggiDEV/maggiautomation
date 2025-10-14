@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="48" />
+  <g fill="#e2e8f0" font-family="'Inter', 'Segoe UI', sans-serif">
+    <text x="80" y="160" font-size="52" font-weight="600" opacity="0.85">Maggiautomation</text>
+    <text x="80" y="250" font-size="86" font-weight="700">Automatizamos tu crecimiento</text>
+    <text x="80" y="330" font-size="34" opacity="0.85">Software a medida · Automatización inteligente · IA aplicada</text>
+    <text x="80" y="410" font-size="30" opacity="0.75">Reduce costos, acelera decisiones y logra resultados medibles.</text>
+  </g>
+  <g transform="translate(760 110)">
+    <rect width="320" height="360" rx="32" fill="rgba(15,23,42,0.6)" stroke="#60a5fa" stroke-width="4" />
+    <text x="32" y="90" fill="#bfdbfe" font-family="'Inter', 'Segoe UI', sans-serif" font-size="46" font-weight="600">+1200 h</text>
+    <text x="32" y="140" fill="#cbd5f5" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26">Ahorro anual promedio</text>
+    <text x="32" y="200" fill="#bfdbfe" font-family="'Inter', 'Segoe UI', sans-serif" font-size="46" font-weight="600">3x ROI</text>
+    <text x="32" y="250" fill="#cbd5f5" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26">en los primeros 6 meses</text>
+  </g>
+</svg>
