@@ -243,7 +243,14 @@
               Cuéntanos tus retos y diseñaremos juntos un plan accionable. Si no vemos oportunidades claras, te lo diremos con honestidad.
             </p>
           </div>
-          <form class="cta-form">
+          <form
+            id="contact-form"
+            class="cta-form"
+            action="https://formspree.io/f/maggiautomation"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Nueva consulta desde Maggiautomation" />
+            <input type="hidden" name="_redirect" value="https://maggiautomation.com/gracias" />
             <label>
               Nombre
               <input type="text" name="name" placeholder="Tu nombre" required />
@@ -258,6 +265,7 @@
             </label>
             <button type="submit" class="btn btn-primary">Reservar consultoría</button>
             <p class="privacy">Responderemos en menos de 24h. Cuidamos tu información.</p>
+            <div class="form-status" aria-live="polite" role="status"></div>
           </form>
         </div>
       </section>
@@ -287,5 +295,51 @@
       </div>
       <div class="footer-bottom">© 2024 Maggiautomation. Todos los derechos reservados.</div>
     </footer>
+    <script>
+      (function () {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+
+        const statusEl = form.querySelector('.form-status');
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          if (statusEl) {
+            statusEl.textContent = 'Enviando...';
+            statusEl.classList.remove('form-status--success', 'form-status--error');
+            statusEl.classList.add('form-status--visible');
+          }
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              headers: {
+                Accept: 'application/json',
+              },
+              body: formData,
+            });
+
+            if (!response.ok) {
+              throw new Error('Error en la red');
+            }
+
+            form.reset();
+
+            if (statusEl) {
+              statusEl.textContent = '¡Gracias! Te contactaremos muy pronto.';
+              statusEl.classList.add('form-status--success');
+            }
+          } catch (error) {
+            if (statusEl) {
+              statusEl.textContent = 'Ocurrió un error. Por favor, inténtalo nuevamente.';
+              statusEl.classList.add('form-status--error');
+            }
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
