@@ -433,6 +433,170 @@ section:hover::before {
   opacity: 1;
 }
 
+.consultancy {
+  padding: 120px 0 80px;
+}
+
+.consultancy-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  background: var(--color-surface-strong);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: var(--shadow-sm);
+}
+
+.consultancy-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.consultancy-copy h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.consultancy-copy p {
+  color: var(--color-text-muted);
+}
+
+.consultancy-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.consultancy-list li {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  line-height: 1.6;
+}
+
+.consultancy-cta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.consultancy-aside {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  display: grid;
+  gap: 18px;
+  align-self: stretch;
+}
+
+.consultancy-aside h3 {
+  margin: 0;
+}
+
+.consultancy-aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.consultancy-aside li {
+  display: flex;
+  gap: 12px;
+}
+
+.consultancy-aside li::before {
+  content: '✔';
+  color: var(--color-secondary);
+}
+
+.consultancy-aside__note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.industries {
+  padding: 120px 0;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.industry-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 16px;
+}
+
+.industry-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.industry-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 8px;
+}
+
+.resources {
+  padding: 120px 0;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.resource-card {
+  background: var(--color-surface-strong);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 16px;
+}
+
+.resource-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.resource-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 8px;
+}
+
+.resource-card a {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
 .trust {
   padding: 60px 0;
 }
@@ -1070,6 +1234,7 @@ textarea {
 
 @media (max-width: 1024px) {
   .hero-grid,
+  .consultancy-grid,
   .pillars-grid,
   .cta-box,
   .thanks-hero__grid,
@@ -1088,6 +1253,8 @@ textarea {
   }
 
   .service-grid,
+  .industries-grid,
+  .resources-grid,
   .cases-grid,
   .testimonials-grid,
   .timeline,
@@ -1159,7 +1326,10 @@ textarea {
   }
 
   .hero-stats,
+  .consultancy-grid,
   .service-grid,
+  .industries-grid,
+  .resources-grid,
   .cases-grid,
   .testimonials-grid,
   .timeline,
@@ -1178,6 +1348,16 @@ textarea {
   .cta-box,
   .thanks-cta__box {
     padding: 32px;
+  }
+
+  .consultancy-grid {
+    padding: 32px;
+  }
+
+  .consultancy-aside,
+  .industry-card,
+  .resource-card {
+    padding: 24px;
   }
 
   .trust-logos {
@@ -1200,6 +1380,9 @@ textarea {
 
   .hero-card,
   .service-card,
+  .resource-card,
+  .industry-card,
+  .consultancy-aside,
   .case-card,
   .testimonial-card,
   .step,
