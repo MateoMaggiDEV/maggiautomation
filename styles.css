@@ -576,6 +576,224 @@ section:hover::before {
   color: #fee2f8;
 }
 
+.thanks-hero {
+  padding: 160px 0 120px;
+}
+
+.thanks-hero__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px;
+  align-items: center;
+}
+
+.thanks-hero__copy h1 {
+  font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.thanks-hero__copy p {
+  color: var(--color-text-muted);
+  max-width: 560px;
+}
+
+.thanks-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 40px;
+}
+
+.thanks-hero__highlight {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.thanks-hero__highlight strong {
+  font-size: 1.6rem;
+  color: white;
+  display: block;
+}
+
+.thanks-hero__highlight span {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.thanks-hero__card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  gap: 20px;
+}
+
+.thanks-hero__card h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.thanks-hero__card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+  color: var(--color-text-muted);
+}
+
+.thanks-hero__card-icon {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+
+.thanks-hero__card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.thanks-hero__card-link {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.thanks-steps {
+  padding: 40px 0 120px;
+}
+
+.thanks-steps__grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.thanks-step {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 16px;
+}
+
+.thanks-step__number {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.thanks-step footer {
+  margin-top: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.thanks-prep {
+  padding: 0 0 120px;
+}
+
+.thanks-prep__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  align-items: start;
+}
+
+.thanks-prep__cards {
+  display: grid;
+  gap: 20px;
+}
+
+.thanks-prep__card {
+  background: rgba(15, 23, 42, 0.65);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  display: grid;
+  gap: 12px;
+}
+
+.thanks-prep__card h3 {
+  margin: 0;
+}
+
+.thanks-proof {
+  padding: 0 0 120px;
+}
+
+.thanks-proof__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  align-items: stretch;
+}
+
+.thanks-proof__list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 32px;
+  display: grid;
+  gap: 16px;
+  color: var(--color-text-muted);
+}
+
+.thanks-proof__link {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.thanks-proof__testimonial {
+  background: var(--color-surface-strong);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: grid;
+  gap: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.thanks-proof__testimonial p {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.thanks-proof__testimonial footer {
+  display: grid;
+  gap: 4px;
+}
+
+.thanks-cta {
+  padding: 0 0 140px;
+}
+
+.thanks-cta__box {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(34, 211, 238, 0.25));
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  align-items: center;
+  box-shadow: var(--shadow-xl);
+}
+
+.thanks-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
 .cta-form label {
   display: flex;
   flex-direction: column;
@@ -647,7 +865,11 @@ textarea {
 @media (max-width: 1024px) {
   .hero-grid,
   .pillars-grid,
-  .cta-box {
+  .cta-box,
+  .thanks-hero__grid,
+  .thanks-prep__grid,
+  .thanks-proof__grid,
+  .thanks-cta__box {
     grid-template-columns: 1fr;
   }
 
@@ -661,7 +883,8 @@ textarea {
 
   .service-grid,
   .cases-grid,
-  .timeline {
+  .timeline,
+  .thanks-steps__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -732,18 +955,28 @@ textarea {
   .service-grid,
   .cases-grid,
   .timeline,
-  .footer-grid {
+  .footer-grid,
+  .thanks-steps__grid {
     grid-template-columns: 1fr;
   }
 
   .trust-grid,
   .pillars-grid,
-  .cta-box {
+  .cta-box,
+  .thanks-cta__box {
     padding: 32px;
   }
 
   .trust-logos {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .thanks-hero__highlight {
+    grid-template-columns: 1fr;
+  }
+
+  .thanks-cta__actions {
+    justify-content: flex-start;
   }
 }
 
@@ -756,7 +989,12 @@ textarea {
   .service-card,
   .case-card,
   .step,
-  .pillar {
+  .pillar,
+  .thanks-hero__card,
+  .thanks-step,
+  .thanks-prep__card,
+  .thanks-proof__testimonial,
+  .thanks-cta__box {
     padding: 24px;
   }
 
