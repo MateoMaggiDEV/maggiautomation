@@ -377,45 +377,87 @@
         </div>
       </section>
 
-      <section class="testimonials">
+      <section class="testimonials" itemscope itemtype="https://schema.org/ItemList">
+        <meta itemprop="name" content="Historias de impacto contadas por nuestros clientes" />
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization" hidden>
+          <meta itemprop="name" content="Maggiautomation" />
+          <meta itemprop="url" content="https://maggiautomation.com/" />
+        </div>
         <div class="container">
           <p class="eyebrow">Testimonios</p>
           <h2>Historias de impacto contadas por nuestros clientes</h2>
+          <div class="testimonial-aggregate" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating" hidden>
+            <meta itemprop="ratingValue" content="98" />
+            <meta itemprop="bestRating" content="100" />
+            <meta itemprop="worstRating" content="0" />
+            <meta itemprop="reviewCount" content="3" />
+            <meta itemprop="ratingExplanation" content="98% de los clientes repiten nuevos proyectos con Maggiautomation." />
+          </div>
           <div class="testimonials-grid">
-            <article class="testimonial-card">
+            <article class="testimonial-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+              <meta itemprop="position" content="1" />
               <figure class="testimonial-avatar">
-                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=200&q=80" alt="Retrato de Laura Fernández" />
+                <img
+                  src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=200&q=80"
+                  alt="Retrato de Laura Fernández"
+                  itemprop="image"
+                />
               </figure>
-              <blockquote class="testimonial-quote">
+              <blockquote class="testimonial-quote" itemprop="reviewBody">
                 “El equipo nos ayudó a <span class="quote-highlight">automatizar reportes críticos en menos de seis semanas</span>. Hoy tomamos decisiones con datos en tiempo real.”
               </blockquote>
-              <div class="testimonial-meta">
-                <span class="testimonial-name">Laura Fernández</span>
-                <span class="testimonial-role">COO, TechNova</span>
+              <div class="testimonial-meta" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span class="testimonial-name" itemprop="name">Laura Fernández</span>
+                <span class="testimonial-role">
+                  <span itemprop="jobTitle">COO</span>,
+                  <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                    <span itemprop="name">TechNova</span>
+                  </span>
+                </span>
               </div>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+              <meta itemprop="position" content="2" />
               <figure class="testimonial-avatar">
-                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=80" alt="Retrato de Diego Molina" />
+                <img
+                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=80"
+                  alt="Retrato de Diego Molina"
+                  itemprop="image"
+                />
               </figure>
-              <blockquote class="testimonial-quote">
+              <blockquote class="testimonial-quote" itemprop="reviewBody">
                 “Nos guiaron en cada sprint y mantuvieron al equipo enfocado en resultados. <span class="quote-highlight">Reducimos los tiempos de onboarding en un 70%</span> sin sumar headcount.”
               </blockquote>
-              <div class="testimonial-meta">
-                <span class="testimonial-name">Diego Molina</span>
-                <span class="testimonial-role">Director de Operaciones, FinWise</span>
+              <div class="testimonial-meta" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span class="testimonial-name" itemprop="name">Diego Molina</span>
+                <span class="testimonial-role">
+                  <span itemprop="jobTitle">Director de Operaciones</span>,
+                  <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                    <span itemprop="name">FinWise</span>
+                  </span>
+                </span>
               </div>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+              <meta itemprop="position" content="3" />
               <figure class="testimonial-avatar">
-                <img src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=200&q=80" alt="Retrato de Sofía Álvarez" />
+                <img
+                  src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=200&q=80"
+                  alt="Retrato de Sofía Álvarez"
+                  itemprop="image"
+                />
               </figure>
-              <blockquote class="testimonial-quote">
+              <blockquote class="testimonial-quote" itemprop="reviewBody">
                 “Su enfoque pragmático de IA nos permitió <span class="quote-highlight">identificar cuellos de botella que no veíamos</span> y liberar más de 400 horas mensuales en nuestro centro de soporte.”
               </blockquote>
-              <div class="testimonial-meta">
-                <span class="testimonial-name">Sofía Álvarez</span>
-                <span class="testimonial-role">Head of Customer Experience, MedAhead</span>
+              <div class="testimonial-meta" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span class="testimonial-name" itemprop="name">Sofía Álvarez</span>
+                <span class="testimonial-role">
+                  <span itemprop="jobTitle">Head of Customer Experience</span>,
+                  <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                    <span itemprop="name">MedAhead</span>
+                  </span>
+                </span>
               </div>
             </article>
           </div>
