@@ -167,7 +167,7 @@ img {
   align-items: center;
 }
 
-.nav-links a {
+.nav-links a:not(.btn) {
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--color-text);
@@ -1307,7 +1307,7 @@ textarea {
     gap: 16px;
   }
 
-  .nav-links a {
+  .nav-links a:not(.btn) {
     width: 100%;
     padding: 12px 0;
   }
